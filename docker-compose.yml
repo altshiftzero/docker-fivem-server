@@ -11,6 +11,8 @@ services:
       - "30120:30120/udp"
     volumes:
       - fivem_data:/opt/FiveM/txData
+    links:
+      - database
   database:
     image: mariadb:latest
     environment:

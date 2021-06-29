@@ -1,6 +1,6 @@
 # docker-fivem-server
 
-This is *not* an official docker image.
+This is *not* an official FiveM docker image.
 
 FiveM Dockerfile with a docker-compose example
 https://hub.docker.com/r/altshiftzero/fivem

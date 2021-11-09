@@ -23,7 +23,7 @@ EXPOSE 30110
 
 RUN apk add --no-cache libgcc libstdc++ curl ca-certificates npm
 RUN mkdir /opt/FiveM
-RUN curl https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4836-a619c5e5293dee08fc3210d9026c1b2350ed0d23/fx.tar.xz | tar xJ -C /opt/FiveM
+RUN curl https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4947-06ddf1c355a8ea23ea3d99decb59837e58954c08/fx.tar.xz | tar xJ -C /opt/FiveM
 RUN npm install -g fvm-installer
 
 

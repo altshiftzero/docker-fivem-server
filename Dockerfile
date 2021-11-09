@@ -23,7 +23,7 @@ EXPOSE 30110
 
 RUN apk add --no-cache libgcc libstdc++ curl ca-certificates npm
 RUN mkdir /opt/FiveM
-RUN curl https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4834-020dd257b3567fda1ad0df77c6f86858d9e63e2f/fx.tar.xz | tar xJ -C /opt/FiveM
+RUN curl https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4836-a619c5e5293dee08fc3210d9026c1b2350ed0d23/fx.tar.xz | tar xJ -C /opt/FiveM
 RUN npm install -g fvm-installer
 
 ENTRYPOINT ["sh", "/opt/FiveM/run.sh"]

@@ -17,14 +17,18 @@ FROM alpine:latest
 
 LABEL maintainer="github.com/altshiftzero"
 
+ENV TXADMIN_VERSION="4.12.0" \
+    FIVEM_ARTIFACT="5265-dae83f643b2ea1e2488e1a57b3b1d53988a2128d"
+
 EXPOSE 40120
 EXPOSE 30120
 EXPOSE 30110
 
-RUN apk add --no-cache libgcc libstdc++ curl ca-certificates npm
+RUN apk add --no-cache libgcc libstdc++ curl ca-certificates npm unzip wget
 RUN mkdir /opt/FiveM
-RUN curl https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4947-06ddf1c355a8ea23ea3d99decb59837e58954c08/fx.tar.xz | tar xJ -C /opt/FiveM
+RUN curl https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/${FIVEM_ARTIFACT}/fx.tar.xz | tar xJ -C /opt/FiveM
+RUN wget https://github.com/tabarra/txAdmin/releases/download/v${TXADMIN_VERSION}/monitor.zip
+RUN unzip -o monitor.zip -d /opt/FiveM/alpine/opt/cfx-server/citizen/system_resources/monitor
 RUN npm install -g fvm-installer
-
 
 ENTRYPOINT ["sh", "/opt/FiveM/run.sh"]

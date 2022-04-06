@@ -13,7 +13,7 @@
 #   limitations under the License.
 
 
-FROM alpine:latest
+FROM alpine:3.15.4
 
 LABEL maintainer="github.com/altshiftzero"
 
